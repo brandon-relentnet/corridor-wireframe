@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:)",
+      "Bash(python3 -m docx2txt:*)"
+    ],
+    "deny": []
+  }
+}
