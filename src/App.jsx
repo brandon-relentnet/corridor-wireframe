@@ -9,9 +9,9 @@ function App() {
             <img src="/cgc_logo.png" alt="Corridor Group Consulting" className="logo-img" />
           </div>
           <nav className="nav">
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <a href="#approach">Approach</a>
+            <a href="#programs">Programs</a>
+            <a href="#principles">Principles</a>
             <a href="#team">Team</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -28,230 +28,242 @@ function App() {
           <h1>Building Tomorrow's Landmarks Today</h1>
           <h2>CLIENT-CENTERED | SOLUTIONS FOCUSED | RESULTS DRIVEN</h2>
           <p className="hero-description">
-            At Corridor Group Consulting, we guide real estate development projects through our 
-            commitment to protecting our clients' investments and aligning every decision with their vision.
+            We guide the complexity of your development with calm, confidence, and creativity.
           </p>
-          <div className="hero-stats">
-            <div className="stat">
-              <h3>3M+</h3>
-              <p>Square Feet Delivered</p>
-            </div>
-            <div className="stat">
-              <h3>50+</h3>
-              <p>Years Combined Experience</p>
-            </div>
-            <div className="stat">
-              <h3>$XXM</h3>
-              <p>[PLACEHOLDER: Total Project Value]</p>
-            </div>
-          </div>
           <button className="cta-button">Start Your Project <span className="arrow">→</span></button>
         </div>
       </section>
 
-      <section className="trust-indicators">
+      <section className="why-corridor">
         <div className="container">
-          <div className="trust-grid">
-            <div className="trust-item">
-              <div className="trust-icon">[ICON: Building]</div>
-              <h3>100+</h3>
-              <p>Projects Completed</p>
-            </div>
-            <div className="trust-item">
-              <div className="trust-icon">[ICON: Award]</div>
-              <h3>15+</h3>
-              <p>Industry Awards</p>
-            </div>
-            <div className="trust-item">
-              <div className="trust-icon">[ICON: Handshake]</div>
-              <h3>98%</h3>
-              <p>Client Satisfaction</p>
-            </div>
-            <div className="trust-item">
-              <div className="trust-icon">[ICON: Clock]</div>
-              <h3>100%</h3>
-              <p>On-Time Delivery</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="featured-projects">
-        <div className="container">
-          <h2>Featured Projects</h2>
-          <p className="section-subtitle">[PLACEHOLDER: Add 3-4 signature projects that showcase your expertise]</p>
-          <div className="projects-grid">
-            <div className="project-card">
-              <div className="project-image">
-                [PROJECT IMAGE: Mixed-use development]
-              </div>
-              <div className="project-content">
-                <h3>[PROJECT NAME: Midtown Mixed-Use Complex]</h3>
-                <p className="project-type">Mixed-Use Development</p>
-                <p className="project-details">[PLACEHOLDER: 250,000 SF mixed-use development featuring retail, office, and residential components]</p>
-                <a href="#" className="project-link">View Project →</a>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                [PROJECT IMAGE: Corporate headquarters]
-              </div>
-              <div className="project-content">
-                <h3>[PROJECT NAME: Corporate Headquarters]</h3>
-                <p className="project-type">Commercial Office</p>
-                <p className="project-details">[PLACEHOLDER: 500,000 SF Class A office building with LEED Gold certification]</p>
-                <a href="#" className="project-link">View Project →</a>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                [PROJECT IMAGE: Retail center]
-              </div>
-              <div className="project-content">
-                <h3>[PROJECT NAME: Regional Retail Center]</h3>
-                <p className="project-type">Retail Development</p>
-                <p className="project-details">[PLACEHOLDER: 180,000 SF lifestyle center with national and local tenants]</p>
-                <a href="#" className="project-link">View Project →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="values">
-        <div className="container">
-          <h2>The Corridor Difference</h2>
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-icon">[ICON: Ear/Listen]</div>
-              <h4>We Listen Differently</h4>
-              <p>Projects are evolving puzzles. We pursue questions with a deep sense of curiosity, turning insight into clarity and clarity into action.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">[ICON: People/Team]</div>
-              <h4>Stakeholder Focused</h4>
-              <p>Every choice reflects the interests of all project stakeholders.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">[ICON: Chat/Communication]</div>
-              <h4>Transparent Communication</h4>
-              <p>We build trust through honesty, clear direction, and collaboration.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">[ICON: Brain/Intelligence]</div>
-              <h4>Collective Intelligence</h4>
-              <p>We draw from the strengths of our teams to solve problems with precision.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">[ICON: Shield/Protection]</div>
-              <h4>Risk Management</h4>
-              <p>We identify, assess, and mitigate risk at every step.</p>
-            </div>
-            <div className="value-card">
-              <div className="value-icon">[ICON: Target/Focus]</div>
-              <h4>Focused Urgency</h4>
-              <p>We move with purpose and discipline, not pressure.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" className="services">
-        <div className="container">
-          <h2>OUR SERVICES</h2>
-          <p className="services-intro">
-            We support a gated investment process, equipping ownership with thorough risk assessments 
-            to confidently advance projects from one phase of the development process to the next.
+          <h2>Why Corridor</h2>
+          <p className="why-intro">
+            Our principals bring over 50 years of combined experience leading commercial and mixed-use development — from master planning and entitlement to delivery and operational readiness. We act as translators of vision, protectors of capital, and facilitators of forward motion.
           </p>
-          <div className="services-timeline">
-            <div className="service-item">
-              <div className="service-number">01</div>
-              <div className="service-content">
-                <h3>Due Diligence</h3>
-                <p>Feasibility, entitlement, underwriting</p>
-                <ul className="service-details">
-                  <li>[PLACEHOLDER: Market analysis and site evaluation]</li>
-                  <li>[PLACEHOLDER: Zoning and entitlement assessment]</li>
-                  <li>[PLACEHOLDER: Financial modeling and ROI projections]</li>
+          <p className="why-detailed">
+            Every real estate development is unique and requires that we articulate the vision for the project within the physical, municipal and market constraints that must be navigated. Through decades of successful implementation of projects we have learned to listen through the eyes of our stakeholders, solve problems creatively and lead teams confidently through the complexity of high-stakes real estate projects.
+          </p>
+          <div className="quote-banner">
+            <blockquote>
+              "Out of clutter, find simplicity. From discord, find harmony. In the middle of difficulty lies opportunity."
+              <cite>— Albert Einstein</cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="programs" className="program-studies">
+        <div className="container">
+          <h2>Program Studies</h2>
+          <p className="section-subtitle">Demonstrating our complementary expertise and proven process through transformative developments</p>
+          <div className="program-grid">
+            <div className="program-card">
+              <div className="program-header">
+                <h3>Hyperscale Program Delivery</h3>
+                <span className="program-location">Quanta Manufacturing Nashville</span>
+              </div>
+              <div className="program-metrics">
+                <div className="metric">
+                  <span className="metric-value">4 Years</span>
+                  <span className="metric-label">Duration</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">7 Facilities</span>
+                  <span className="metric-label">Delivered</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">$130M+</span>
+                  <span className="metric-label">Investment</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">55MW</span>
+                  <span className="metric-label">Added Capacity</span>
+                </div>
+              </div>
+              <p className="program-description">
+                Over a four-year period, Corridor Group leadership directed seven major facility conversions, expansions, and retrofits for the world's largest server manufacturer, serving hyperscale clients such as Google, AWS, and Microsoft. This multi-phase program transformed more than 600,000 SF of logistics and manufacturing space into high-density, AI-ready testing environments, all while maintaining full production.
+              </p>
+              <div className="program-highlights">
+                <h4>Key Achievements</h4>
+                <ul>
+                  <li>12,248 tons of installed cooling capacity</li>
+                  <li>74 PODs delivered or upgraded</li>
+                  <li>Zero operational downtime during construction</li>
+                  <li>8-10 month average NTP-to-handoff schedule</li>
                 </ul>
               </div>
-              <div className="service-image">
-                [SERVICE IMAGE: Team reviewing documents]
+              <div className="program-quote">
+                <p>"We leverage the collective intelligence of our trusted design consultant, vendor and subcontractor networks to compress schedules and solve integration challenges in real time."</p>
               </div>
+              <a href="#hyperscale" className="program-link">Read Full Case Study →</a>
             </div>
-            <div className="service-item reverse">
-              <div className="service-number">02</div>
-              <div className="service-content">
-                <h3>Pre-Development</h3>
-                <p>Design team management, budgeting, permitting & preconstruction</p>
-                <ul className="service-details">
-                  <li>[PLACEHOLDER: Architect and consultant selection]</li>
-                  <li>[PLACEHOLDER: Conceptual design and value engineering]</li>
-                  <li>[PLACEHOLDER: Permit strategy and municipal coordination]</li>
+            
+            <div className="program-card">
+              <div className="program-header">
+                <h3>Mixed-Use Development Program</h3>
+                <span className="program-location">Urban Infill & Institutional Partnerships</span>
+              </div>
+              <div className="program-metrics">
+                <div className="metric">
+                  <span className="metric-value">10+ Years</span>
+                  <span className="metric-label">Experience</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">3M+ SF</span>
+                  <span className="metric-label">Delivered</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">Multiple</span>
+                  <span className="metric-label">P3 Structures</span>
+                </div>
+                <div className="metric">
+                  <span className="metric-value">3 Cities</span>
+                  <span className="metric-label">Southeast</span>
+                </div>
+              </div>
+              <p className="program-description">
+                Over more than a decade, Corridor Group leadership has directed the delivery of multiple high-profile urban infill and mixed-use development programs involving municipalities, universities, healthcare institutions, corporate headquarters, and private investment partners. These multi-phase, multi-stakeholder initiatives transformed underutilized urban sites into vibrant, high-impact destinations.
+              </p>
+              <div className="program-highlights">
+                <h4>Representative Projects</h4>
+                <ul>
+                  <li><strong>120 West Trinity (Decatur, GA):</strong> 330 apartments, 33,000 SF office, 19,000 SF retail</li>
+                  <li><strong>Carolina Square (Chapel Hill, NC):</strong> 246 apartments, 160,000 SF office, 43,000 SF retail</li>
+                  <li><strong>Emory Point (Atlanta, GA):</strong> 750 units, 125,000 SF retail</li>
                 </ul>
               </div>
-              <div className="service-image">
-                [SERVICE IMAGE: Architectural plans]
+              <div className="program-quote">
+                <p>"We maintain calm, confident leadership with focused urgency — protecting investment, preserving vision, and delivering assets that endure."</p>
               </div>
-            </div>
-            <div className="service-item">
-              <div className="service-number">03</div>
-              <div className="service-content">
-                <h3>Execution</h3>
-                <p>Construction oversight, stakeholder alignment</p>
-                <ul className="service-details">
-                  <li>[PLACEHOLDER: Construction administration]</li>
-                  <li>[PLACEHOLDER: Quality control and schedule management]</li>
-                  <li>[PLACEHOLDER: Stakeholder communication and reporting]</li>
-                </ul>
-              </div>
-              <div className="service-image">
-                [SERVICE IMAGE: Construction site]
-              </div>
-            </div>
-            <div className="service-item reverse">
-              <div className="service-number">04</div>
-              <div className="service-content">
-                <h3>Stabilization</h3>
-                <p>Close-out & operational readiness</p>
-                <ul className="service-details">
-                  <li>[PLACEHOLDER: Punch list and warranty coordination]</li>
-                  <li>[PLACEHOLDER: Operations transition planning]</li>
-                  <li>[PLACEHOLDER: Asset management setup]</li>
-                </ul>
-              </div>
-              <div className="service-image">
-                [SERVICE IMAGE: Completed building]
-              </div>
+              <a href="#mixed-use" className="program-link">Read Full Case Study →</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="process">
+      <section id="principles" className="guiding-principles">
         <div className="container">
-          <h2>Our Process</h2>
-          <p className="section-subtitle">[PLACEHOLDER: Describe your unique approach to project management]</p>
-          <div className="process-grid">
-            <div className="process-step">
-              <div className="step-number">1</div>
-              <h3>Discovery</h3>
-              <p>[PLACEHOLDER: Initial consultation and project assessment]</p>
+          <h2>Guiding Principles</h2>
+          <p className="section-subtitle">Our approach is built on three core pillars that guide every decision and action we take.</p>
+          <div className="principles-grid">
+            <div className="principle-card" data-principle="client-centered">
+              <div className="principle-icon">[ICON: People/Client]</div>
+              <h3>Client Centered</h3>
+              <p className="principle-summary">We place our clients' vision, goals, and investment protection at the heart of every decision. By listening differently and understanding deeply, we ensure that every project milestone aligns with your strategic objectives.</p>
+              <a href="#client-centered" className="principle-link">Learn More →</a>
             </div>
-            <div className="process-step">
-              <div className="step-number">2</div>
-              <h3>Strategy</h3>
-              <p>[PLACEHOLDER: Develop comprehensive project roadmap]</p>
+            <div className="principle-card" data-principle="solutions-focused">
+              <div className="principle-icon">[ICON: Lightbulb/Solution]</div>
+              <h3>Solutions Focused</h3>
+              <p className="principle-summary">We approach challenges with creativity and precision, drawing from collective intelligence to solve problems. Our team transforms complex puzzles into clear pathways forward.</p>
+              <a href="#solutions-focused" className="principle-link">Learn More →</a>
             </div>
-            <div className="process-step">
-              <div className="step-number">3</div>
-              <h3>Execute</h3>
-              <p>[PLACEHOLDER: Implement plan with precision and accountability]</p>
+            <div className="principle-card" data-principle="results-driven">
+              <div className="principle-icon">[ICON: Target/Results]</div>
+              <h3>Results Driven</h3>
+              <p className="principle-summary">We move with focused urgency and disciplined execution, ensuring projects are delivered on time, on budget, and aligned with your vision. Leadership and accountability drive our commitment to exceptional outcomes.</p>
+              <a href="#results-driven" className="principle-link">Learn More →</a>
             </div>
-            <div className="process-step">
-              <div className="step-number">4</div>
-              <h3>Deliver</h3>
-              <p>[PLACEHOLDER: Complete project on time and within budget]</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" className="approach">
+        <div className="container">
+          <h2>Our Approach</h2>
+          <p className="approach-intro">
+            Our Services are designed to support a gated investment review process, equipping ownership with the decision-making tools needed to confidently advance projects through each stage of Development.
+          </p>
+          <p className="approach-tagline">We guide the complexity of your development with calm, confidence, and creativity.</p>
+          
+          <div className="approach-phases">
+            <div className="phase-section">
+              <div className="phase-header">
+                <span className="phase-number">01</span>
+                <h3>Discovery & Due Diligence</h3>
+              </div>
+              <div className="phase-content">
+                <div className="phase-methodology">
+                  <h4>How We Listen</h4>
+                  <p>We begin by deeply understanding your vision and translating it into actionable strategies. Listening differently to identify opportunities and constraints early in the process.</p>
+                </div>
+                <div className="phase-deliverables">
+                  <h4>What We Deliver</h4>
+                  <ul>
+                    <li>Market analysis and site evaluation</li>
+                    <li>Feasibility studies and financial modeling</li>
+                    <li>Zoning and entitlement assessment</li>
+                    <li>Risk identification and mitigation planning</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="phase-section">
+              <div className="phase-header">
+                <span className="phase-number">02</span>
+                <h3>Structure & Pre-Development</h3>
+              </div>
+              <div className="phase-content">
+                <div className="phase-methodology">
+                  <h4>How We Organize</h4>
+                  <p>Creating frameworks that align stakeholders, optimize resources, and establish clear pathways from concept to completion.</p>
+                </div>
+                <div className="phase-deliverables">
+                  <h4>What We Deliver</h4>
+                  <ul>
+                    <li>Design team selection and management</li>
+                    <li>Budgeting and cost control systems</li>
+                    <li>Permit strategy and municipal coordination</li>
+                    <li>Preconstruction planning and value engineering</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="phase-section">
+              <div className="phase-header">
+                <span className="phase-number">03</span>
+                <h3>Execute & Oversee</h3>
+              </div>
+              <div className="phase-content">
+                <div className="phase-methodology">
+                  <h4>How We Lead</h4>
+                  <p>Implementing with precision while maintaining flexibility to adapt as projects evolve, always protecting your investment with confident leadership.</p>
+                </div>
+                <div className="phase-deliverables">
+                  <h4>What We Deliver</h4>
+                  <ul>
+                    <li>Construction administration and quality control</li>
+                    <li>Schedule management and milestone tracking</li>
+                    <li>Stakeholder communication and reporting</li>
+                    <li>Design optimization and change management</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="phase-section">
+              <div className="phase-header">
+                <span className="phase-number">04</span>
+                <h3>Deliver & Transition</h3>
+              </div>
+              <div className="phase-content">
+                <div className="phase-methodology">
+                  <h4>How We Complete</h4>
+                  <p>Ensuring seamless handoff and operational readiness, with assets built to endure and perform for long-term success.</p>
+                </div>
+                <div className="phase-deliverables">
+                  <h4>What We Deliver</h4>
+                  <ul>
+                    <li>Project close-out and warranty coordination</li>
+                    <li>Operations transition planning</li>
+                    <li>Asset management setup and documentation</li>
+                    <li>Performance monitoring and optimization</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -260,10 +272,17 @@ function App() {
       <section id="team" className="team">
         <div className="container">
           <h2>Leadership Team</h2>
-          <p className="team-intro">
-            Our leadership team brings a combined 50+ years of experience across institutional, 
-            commercial, and mixed-use real estate development.
-          </p>
+          <div className="team-intro">
+            <p>
+              Our leadership team brings a combined 50+ years of experience across institutional, 
+              commercial, and mixed-use real estate development. We lead confidently through complexity, 
+              solving creatively and listening differently to deliver exceptional outcomes.
+            </p>
+            <blockquote className="team-quote">
+              "Strive not to be a success, but rather to be of value."
+              <cite>— Albert Einstein</cite>
+            </blockquote>
+          </div>
           <div className="team-grid">
             <div className="team-member">
               <div className="member-image">
@@ -311,33 +330,6 @@ function App() {
         </div>
       </section>
 
-      <section className="certifications">
-        <div className="container">
-          <h2>Certifications & Memberships</h2>
-          <div className="cert-grid">
-            <div className="cert-item">
-              [LOGO: LEED AP]<br/>
-              <span>[PLACEHOLDER: LEED Accredited Professional]</span>
-            </div>
-            <div className="cert-item">
-              [LOGO: ABC]<br/>
-              <span>[PLACEHOLDER: Associated Builders and Contractors]</span>
-            </div>
-            <div className="cert-item">
-              [LOGO: NAIOP]<br/>
-              <span>[PLACEHOLDER: Commercial Real Estate Development Association]</span>
-            </div>
-            <div className="cert-item">
-              [LOGO: ULI]<br/>
-              <span>[PLACEHOLDER: Urban Land Institute]</span>
-            </div>
-            <div className="cert-item">
-              [LOGO: Chamber]<br/>
-              <span>[PLACEHOLDER: Nashville Chamber of Commerce]</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="insights">
         <div className="container">
@@ -375,33 +367,6 @@ function App() {
         </div>
       </section>
 
-      <section className="testimonials">
-        <div className="container">
-          <h2>Client Success Stories</h2>
-          <div className="testimonials-grid">
-            <div className="testimonial">
-              <div className="quote">"[PLACEHOLDER: Corridor Group's attention to detail and proactive communication made our $50M development project seamless from start to finish.]"</div>
-              <div className="testimonial-author">
-                <div className="author-image">[CLIENT IMAGE]</div>
-                <div>
-                  <p className="author-name">[CLIENT NAME]</p>
-                  <p className="author-title">[CEO, Development Company]</p>
-                </div>
-              </div>
-            </div>
-            <div className="testimonial">
-              <div className="quote">"[PLACEHOLDER: Their risk management approach saved us significant time and money during the entitlement process.]"</div>
-              <div className="testimonial-author">
-                <div className="author-image">[CLIENT IMAGE]</div>
-                <div>
-                  <p className="author-name">[CLIENT NAME]</p>
-                  <p className="author-title">[Principal, Investment Firm]</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section id="contact" className="contact">
         <div className="container">
@@ -457,11 +422,11 @@ function App() {
             </div>
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Services</h4>
-                <a href="#">Due Diligence</a>
-                <a href="#">Pre-Development</a>
-                <a href="#">Execution</a>
-                <a href="#">Stabilization</a>
+                <h4>Our Approach</h4>
+                <a href="#">Discovery & Due Diligence</a>
+                <a href="#">Structure & Pre-Development</a>
+                <a href="#">Execute & Oversee</a>
+                <a href="#">Deliver & Transition</a>
               </div>
               <div className="footer-column">
                 <h4>Company</h4>
