@@ -1,8 +1,23 @@
 import { useState, useEffect } from 'react'
+import { 
+  BuildingOffice2Icon,
+  ChartBarIcon,
+  CurrencyDollarIcon,
+  BoltIcon,
+  UserGroupIcon,
+  LightBulbIcon,
+  ChartPieIcon,
+  ClipboardDocumentCheckIcon,
+  DocumentMagnifyingGlassIcon,
+  CogIcon,
+  RocketLaunchIcon,
+  CheckCircleIcon
+} from '@heroicons/react/24/outline'
 import './App.css'
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [scrollY, setScrollY] = useState(0)
   const heroImages = ['/hero_bg_0.png', '/hero_bg_1.png']
   
   useEffect(() => {
@@ -11,6 +26,15 @@ function App() {
     }, 5000) // Change image every 5 seconds
     
     return () => clearInterval(interval)
+  }, [])
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+    
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   
   return (
@@ -41,13 +65,13 @@ function App() {
           ))}
           <div className="hero-overlay" />
         </div>
-        <div className="hero-content">
-          <h1>Building Tomorrow's Landmarks Today</h1>
+        <div className="hero-content" style={{ transform: `translateY(${scrollY * 0.3}px)` }}>
+          <h1 className="hero-title">Building Tomorrow's Landmarks Today</h1>
           <h2>CLIENT-CENTERED | SOLUTIONS FOCUSED | RESULTS DRIVEN</h2>
           <p className="hero-description">
             We guide the complexity of your development with calm, confidence, and creativity.
           </p>
-          <button className="cta-button">Start Your Project <span className="arrow">→</span></button>
+          <button className="cta-button" onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>Start Your Project <span className="arrow">→</span></button>
         </div>
       </section>
 
@@ -157,19 +181,25 @@ function App() {
           <p className="section-subtitle">Our approach is built on three core pillars that guide every decision and action we take.</p>
           <div className="principles-grid">
             <div className="principle-card" data-principle="client-centered">
-              <div className="principle-icon">[ICON: People/Client]</div>
+              <div className="principle-icon">
+                <UserGroupIcon className="icon" />
+              </div>
               <h3>Client Centered</h3>
               <p className="principle-summary">We place our clients' vision, goals, and investment protection at the heart of every decision. By listening differently and understanding deeply, we ensure that every project milestone aligns with your strategic objectives.</p>
               <a href="#client-centered" className="principle-link">Learn More →</a>
             </div>
             <div className="principle-card" data-principle="solutions-focused">
-              <div className="principle-icon">[ICON: Lightbulb/Solution]</div>
+              <div className="principle-icon">
+                <LightBulbIcon className="icon" />
+              </div>
               <h3>Solutions Focused</h3>
               <p className="principle-summary">We approach challenges with creativity and precision, drawing from collective intelligence to solve problems. Our team transforms complex puzzles into clear pathways forward.</p>
               <a href="#solutions-focused" className="principle-link">Learn More →</a>
             </div>
             <div className="principle-card" data-principle="results-driven">
-              <div className="principle-icon">[ICON: Target/Results]</div>
+              <div className="principle-icon">
+                <ChartPieIcon className="icon" />
+              </div>
               <h3>Results Driven</h3>
               <p className="principle-summary">We move with focused urgency and disciplined execution, ensuring projects are delivered on time, on budget, and aligned with your vision. Leadership and accountability drive our commitment to exceptional outcomes.</p>
               <a href="#results-driven" className="principle-link">Learn More →</a>
@@ -284,27 +314,47 @@ function App() {
 
       <section className="statistics">
         <div className="container">
-          <h2>Decades of Complex Real Estate Development</h2>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <span className="stat-value">3M SF</span>
-              <span className="stat-label">Delivered</span>
+          <h2 className="stats-heading">Decades of Complex Real Estate Development</h2>
+          <div className="stats-showcase">
+            <div className="stat-card glass-card">
+              <div className="stat-icon">
+                <BuildingOffice2Icon className="icon" />
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">3M SF</span>
+                <span className="stat-label">Square Feet Delivered</span>
+                <div className="stat-bar"></div>
+              </div>
             </div>
-            <div className="stat-item">
-              <span className="stat-value">$750M</span>
-              <span className="stat-label">Developed Value</span>
+            <div className="stat-card glass-card featured">
+              <div className="stat-icon">
+                <CurrencyDollarIcon className="icon" />
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">$750M</span>
+                <span className="stat-label">Developed Value</span>
+                <div className="stat-bar"></div>
+              </div>
             </div>
-            <div className="stat-item">
-              <span className="stat-value">7</span>
-              <span className="stat-label">Facilities Delivered</span>
+            <div className="stat-card glass-card">
+              <div className="stat-icon">
+                <CurrencyDollarIcon className="icon" />
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">$130M</span>
+                <span className="stat-label">Revenue Generated</span>
+                <div className="stat-bar"></div>
+              </div>
             </div>
-            <div className="stat-item">
-              <span className="stat-value">$130M</span>
-              <span className="stat-label">in Revenue</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-value">55 MW</span>
-              <span className="stat-label">Capacity Added</span>
+            <div className="stat-card glass-card">
+              <div className="stat-icon">
+                <BoltIcon className="icon" />
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">55 MW</span>
+                <span className="stat-label">Power Capacity Added</span>
+                <div className="stat-bar"></div>
+              </div>
             </div>
           </div>
         </div>
