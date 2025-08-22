@@ -3,7 +3,16 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:)",
-      "Bash(python3 -m docx2txt:*)"
+      "Bash(python3 -m docx2txt:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3:*)",
+      "Bash(brew install:*)",
+      "Bash(true)",
+      "Bash(docx2txt:*)",
+      "Bash(/opt/homebrew/bin/docx2txt \"/Users/doni/Downloads/Fw_ Quanta/Hyperscale_Program_Case_Study_One_Pager.docx\")",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }

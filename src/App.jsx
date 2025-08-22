@@ -83,7 +83,7 @@ function App() {
           <div className="hero-overlay" />
         </div>
         <div className="hero-content" style={{ transform: `translateY(${scrollY * 0.3}px)` }}>
-          <h1 className="hero-title">Building Tomorrow's Landmarks Today</h1>
+          <h1 className="hero-title">Translating vision into action through creative leadership.</h1>
           <h2>CLIENT-CENTERED | SOLUTIONS FOCUSED | RESULTS DRIVEN</h2>
           <p className="hero-description">
             We guide the complexity of your development with calm, confidence, and creativity.
@@ -113,7 +113,7 @@ function App() {
 
       <section id="programs" className="program-studies">
         <div className="container">
-          <h2 className="section-heading">Program Studies</h2>
+          <h2 className="section-heading">Program Leadership</h2>
           <p className="section-subtitle">Demonstrating our complementary expertise and proven process through transformative developments</p>
           <div className="program-grid">
             <div className="program-card">
@@ -124,15 +124,12 @@ function App() {
               <div className="program-metrics">
                 <div className="metric">
                   <span className="metric-value">4 Years</span>
-                  <span className="metric-label">Duration</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value">$130M+</span>
-                  <span className="metric-label">Investment</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value">55MW</span>
-                  <span className="metric-label">Added Capacity</span>
                 </div>
               </div>
               <p className="program-description">
@@ -155,21 +152,18 @@ function App() {
             
             <div className="program-card">
               <div className="program-header">
-                <h3>Mixed-Use Development Program</h3>
+                <h3>Mixed-Use Development</h3>
                 <span className="program-location">Urban Infill & Institutional Partnerships</span>
               </div>
               <div className="program-metrics">
                 <div className="metric">
-                  <span className="metric-value">10+ Years</span>
-                  <span className="metric-label">Experience</span>
+                  <span className="metric-value">15+ Years</span>
                 </div>
                 <div className="metric">
-                  <span className="metric-value">3M+ SF</span>
-                  <span className="metric-label">Delivered</span>
+                  <span className="metric-value">2.1M+ SF</span>
                 </div>
                 <div className="metric">
-                  <span className="metric-value">3 Cities</span>
-                  <span className="metric-label">Southeast</span>
+                  <span className="metric-value">$750M+</span>
                 </div>
               </div>
               <p className="program-description">
@@ -202,16 +196,14 @@ function App() {
                 <UserGroupIcon className="icon" />
               </div>
               <h3>Client Centered</h3>
-              <p className="principle-summary">We place our clients' vision, goals, and investment protection at the heart of every decision. By listening differently and understanding deeply, we ensure that every project milestone aligns with your strategic objectives.</p>
-              <a href="#client-centered" className="principle-link">Learn More →</a>
+              <p className="principle-summary">We place our clients' vision, goals, and investment protection at the heart of every decision. By listening differently, we ensure that every project milestone aligns with your strategic objectives.</p>
             </div>
             <div className="principle-card" data-principle="solutions-focused">
               <div className="principle-icon">
                 <LightBulbIcon className="icon" />
               </div>
               <h3>Solutions Focused</h3>
-              <p className="principle-summary">We approach challenges with creativity and precision, drawing from collective intelligence to solve problems. Our team transforms complex puzzles into clear pathways forward.</p>
-              <a href="#solutions-focused" className="principle-link">Learn More →</a>
+              <p className="principle-summary">We approach challenges with creativity and precision, drawing from the collective intelligence of our stakeholders to solve problems. Our team transforms complex puzzles into clear pathways forward.</p>
             </div>
             <div className="principle-card" data-principle="results-driven">
               <div className="principle-icon">
@@ -219,7 +211,6 @@ function App() {
               </div>
               <h3>Results Driven</h3>
               <p className="principle-summary">We move with focused urgency and disciplined execution, ensuring projects are delivered on time, on budget, and aligned with your vision. Leadership and accountability drive our commitment to exceptional outcomes.</p>
-              <a href="#results-driven" className="principle-link">Learn More →</a>
             </div>
           </div>
         </div>
@@ -252,13 +243,13 @@ function App() {
                 <div className="phase-content">
                   <div className="phase-methodology">
                     <h4>How We Listen</h4>
-                    <p>We begin by deeply understanding your vision and translating it into actionable strategies. Listening differently to identify opportunities and constraints early in the process.</p>
+                    <p>We begin by understanding your vision and translating it into actionable strategies. Listening differently to identify opportunities and constraints early in the process.</p>
                   </div>
                   <div className="phase-deliverables">
                     <h4>What We Deliver</h4>
                     <ul>
                       <li>Market analysis and site evaluation</li>
-                      <li>Feasibility studies and financial modeling</li>
+                      <li>Feasibility studies and financial assessment</li>
                       <li>Zoning and entitlement assessment</li>
                       <li>Risk identification and mitigation planning</li>
                     </ul>
@@ -380,18 +371,8 @@ function App() {
                 <CurrencyDollarIcon className="icon" />
               </div>
               <div className="stat-content">
-                <span className="stat-value">$750M</span>
+                <span className="stat-value">~$1B</span>
                 <span className="stat-label">Developed Value</span>
-                <div className="stat-bar"></div>
-              </div>
-            </div>
-            <div className="stat-card glass-card">
-              <div className="stat-icon">
-                <CurrencyDollarIcon className="icon" />
-              </div>
-              <div className="stat-content">
-                <span className="stat-value">$130M</span>
-                <span className="stat-label">Revenue Generated</span>
                 <div className="stat-bar"></div>
               </div>
             </div>
@@ -427,29 +408,6 @@ function App() {
             <div className="team-member">
               <div className="member-left">
                 <div className="member-image">
-                  <img src="/joshua-hall.png" alt="Joshua Hall" />
-                </div>
-                <div className="member-credentials">
-                  <div><strong>Education:</strong> B.S. & M.S. Structural Engineering, Vanderbilt University</div>
-                  <div><strong>Expertise:</strong> Leadership & Delivery - 14 years at Cousins Properties</div>
-                  <div><strong>Community:</strong> Lions Club International</div>
-                </div>
-              </div>
-              <div className="member-content">
-                <h3>Joshua Hall</h3>
-                <h4>Co-Founder</h4>
-                <p className="member-tagline">Strategic. Steady. Stakeholder-focused.</p>
-                <p className="member-bio">
-                  Joshua brings 25 years of experience leading the development of high-impact real estate 
-                  across a wide range of product types. With over 3 million square feet delivered across 
-                  the Southeast and beyond, he's not just a developer—he's a builder of trust, consensus, 
-                  and momentum.
-                </p>
-              </div>
-            </div>
-            <div className="team-member">
-              <div className="member-left">
-                <div className="member-image">
                   <img src="/jason-hall.png" alt="Jason Hall" />
                 </div>
                 <div className="member-credentials">
@@ -467,6 +425,29 @@ function App() {
                   spectrum from historic renovations to cutting-edge data centers. His experience runs 
                   deep in Middle Tennessee and across the U.S., including Georgia, DC, Florida, Texas, 
                   Oregon, and beyond.
+                </p>
+              </div>
+            </div>
+            <div className="team-member">
+              <div className="member-left">
+                <div className="member-image">
+                  <img src="/joshua-hall.png" alt="Joshua Hall" />
+                </div>
+                <div className="member-credentials">
+                  <div><strong>Education:</strong> B.S. & M.S. Structural Engineering, Vanderbilt University NASA GSRP Fellow</div>
+                  <div><strong>Expertise:</strong> Executive Leadership & Asset Delivery</div>
+                  <div><strong>Community:</strong> Lions Club International</div>
+                </div>
+              </div>
+              <div className="member-content">
+                <h3>Joshua Hall</h3>
+                <h4>Co-Founder</h4>
+                <p className="member-tagline">Strategic. Steady. Stakeholder-focused.</p>
+                <p className="member-bio">
+                  Joshua brings 25 years of experience leading the development of high-impact real estate 
+                  across a wide range of product types. With over 3 million square feet delivered across 
+                  the Southeast and beyond, he's not just a developer—he's a builder of trust, consensus, 
+                  and momentum.
                 </p>
               </div>
             </div>
@@ -490,7 +471,7 @@ function App() {
                 </div>
                 <div className="contact-item">
                   <h4>Contact</h4>
-                  <p>Phone: (404) 293-6330<br/>
+                  <p>
                   Email: joshua@corridorgroupconsulting.com</p>
                 </div>
               </div>
@@ -546,7 +527,6 @@ function App() {
                 <h4>Contact Info</h4>
                 <div className="contact-info-footer">
                   <p><strong>Office:</strong><br/>701 Newhall<br/>Nashville, TN 37206</p>
-                  <p><strong>Phone:</strong><br/>(404) 293-6330</p>
                   <p><strong>Email:</strong><br/>joshua@corridorgroupconsulting.com</p>
                 </div>
               </div>
