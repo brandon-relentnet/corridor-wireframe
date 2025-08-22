@@ -1,6 +1,18 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const heroImages = ['/hero_bg_0.png', '/hero_bg_1.png']
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length)
+    }, 5000) // Change image every 5 seconds
+    
+    return () => clearInterval(interval)
+  }, [])
+  
   return (
     <div className="app">
       <header className="header">
@@ -20,9 +32,14 @@ function App() {
 
       <section className="hero">
         <div className="hero-background">
-          <div className="hero-image-placeholder">
-            [HERO IMAGE: Modern commercial building or construction site]
-          </div>
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`hero-slide ${index === currentImageIndex ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${image})` }}
+            />
+          ))}
+          <div className="hero-overlay" />
         </div>
         <div className="hero-content">
           <h1>Building Tomorrow's Landmarks Today</h1>
@@ -69,10 +86,6 @@ function App() {
                   <span className="metric-label">Duration</span>
                 </div>
                 <div className="metric">
-                  <span className="metric-value">7 Facilities</span>
-                  <span className="metric-label">Delivered</span>
-                </div>
-                <div className="metric">
                   <span className="metric-value">$130M+</span>
                   <span className="metric-label">Investment</span>
                 </div>
@@ -112,10 +125,6 @@ function App() {
                 <div className="metric">
                   <span className="metric-value">3M+ SF</span>
                   <span className="metric-label">Delivered</span>
-                </div>
-                <div className="metric">
-                  <span className="metric-value">Multiple</span>
-                  <span className="metric-label">P3 Structures</span>
                 </div>
                 <div className="metric">
                   <span className="metric-value">3 Cities</span>
@@ -172,6 +181,10 @@ function App() {
       <section id="approach" className="approach">
         <div className="container">
           <h2>Our Approach</h2>
+          <blockquote className="einstein-quote">
+            "We cannot solve our problems with the same thinking we used when we created them."
+            <cite>— Albert Einstein</cite>
+          </blockquote>
           <p className="approach-intro">
             Our Services are designed to support a gated investment review process, equipping ownership with the decision-making tools needed to confidently advance projects through each stage of Development.
           </p>
@@ -181,7 +194,7 @@ function App() {
             <div className="phase-section">
               <div className="phase-header">
                 <span className="phase-number">01</span>
-                <h3>Discovery & Due Diligence</h3>
+                <h3>Feasibility & Due Diligence</h3>
               </div>
               <div className="phase-content">
                 <div className="phase-methodology">
@@ -203,7 +216,7 @@ function App() {
             <div className="phase-section">
               <div className="phase-header">
                 <span className="phase-number">02</span>
-                <h3>Structure & Pre-Development</h3>
+                <h3>Document & Develop</h3>
               </div>
               <div className="phase-content">
                 <div className="phase-methodology">
@@ -251,7 +264,7 @@ function App() {
               </div>
               <div className="phase-content">
                 <div className="phase-methodology">
-                  <h4>How We Complete</h4>
+                  <h4>How We Finish</h4>
                   <p>Ensuring seamless handoff and operational readiness, with assets built to endure and perform for long-term success.</p>
                 </div>
                 <div className="phase-deliverables">
@@ -264,6 +277,34 @@ function App() {
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="statistics">
+        <div className="container">
+          <h2>Decades of Complex Real Estate Development</h2>
+          <div className="stats-grid">
+            <div className="stat-item">
+              <span className="stat-value">3M SF</span>
+              <span className="stat-label">Delivered</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">$750M</span>
+              <span className="stat-label">Developed Value</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">7</span>
+              <span className="stat-label">Facilities Delivered</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">$130M</span>
+              <span className="stat-label">in Revenue</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-value">55 MW</span>
+              <span className="stat-label">Capacity Added</span>
             </div>
           </div>
         </div>
@@ -286,7 +327,7 @@ function App() {
           <div className="team-grid">
             <div className="team-member">
               <div className="member-image">
-                [TEAM IMAGE: Joshua Hall professional headshot]
+                <img src="/joshua-hall.png" alt="Joshua Hall" />
               </div>
               <div className="member-content">
                 <h3>Joshua Hall</h3>
@@ -300,14 +341,14 @@ function App() {
                 </p>
                 <p className="member-credentials">
                   <strong>Education:</strong> B.S. & M.S. Structural Engineering, Vanderbilt University<br/>
-                  <strong>Background:</strong> 14 years at Cousins Properties<br/>
+                  <strong>Expertise:</strong> Leadership & Delivery - 14 years at Cousins Properties<br/>
                   <strong>Community:</strong> Lions Club International
                 </p>
               </div>
             </div>
             <div className="team-member">
               <div className="member-image">
-                [TEAM IMAGE: Jason Hall professional headshot]
+                <img src="/jason-hall.png" alt="Jason Hall" />
               </div>
               <div className="member-content">
                 <h3>Jason Hall</h3>
@@ -331,42 +372,6 @@ function App() {
       </section>
 
 
-      <section className="insights">
-        <div className="container">
-          <h2>Latest Insights</h2>
-          <p className="section-subtitle">[PLACEHOLDER: Stay informed with our latest thoughts on real estate development trends]</p>
-          <div className="insights-grid">
-            <article className="insight-card">
-              <div className="insight-image">[ARTICLE IMAGE: Development Trends]</div>
-              <div className="insight-content">
-                <span className="insight-date">[DATE: March 15, 2024]</span>
-                <h3>[TITLE: Navigating 2024 Development Challenges]</h3>
-                <p>[PREVIEW: Understanding market shifts and adapting strategies for successful project delivery in today's environment...]</p>
-                <a href="#" className="insight-link">Read More →</a>
-              </div>
-            </article>
-            <article className="insight-card">
-              <div className="insight-image">[ARTICLE IMAGE: Sustainable Building]</div>
-              <div className="insight-content">
-                <span className="insight-date">[DATE: March 10, 2024]</span>
-                <h3>[TITLE: The ROI of Sustainable Development]</h3>
-                <p>[PREVIEW: How green building practices are driving value and attracting premium tenants in commercial real estate...]</p>
-                <a href="#" className="insight-link">Read More →</a>
-              </div>
-            </article>
-            <article className="insight-card">
-              <div className="insight-image">[ARTICLE IMAGE: Mixed-Use Planning]</div>
-              <div className="insight-content">
-                <span className="insight-date">[DATE: March 5, 2024]</span>
-                <h3>[TITLE: Mixed-Use Development Best Practices]</h3>
-                <p>[PREVIEW: Creating vibrant communities through thoughtful integration of residential, retail, and office spaces...]</p>
-                <a href="#" className="insight-link">Read More →</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
 
       <section id="contact" className="contact">
         <div className="container">
@@ -377,18 +382,14 @@ function App() {
               <div className="contact-details">
                 <div className="contact-item">
                   <h4>Office</h4>
-                  <p>[PLACEHOLDER: 123 Main Street, Suite 100]<br/>
-                  [Nashville, TN 37201]</p>
+                  <p>701 Newhall<br/>
+                  Nashville, TN 37206</p>
                 </div>
                 <div className="contact-item">
                   <h4>Contact</h4>
-                  <p>Phone: [PLACEHOLDER: (615) 555-0100]<br/>
-                  Email: [PLACEHOLDER: info@corridorgroup.com]</p>
+                  <p>Phone: (404) 293-6330<br/>
+                  Email: joshua@corridorgroupconsulting.com</p>
                 </div>
-              </div>
-              <div className="map-placeholder">
-                [MAP: Interactive Google Map showing office location in Nashville]<br/>
-                <small>[PLACEHOLDER: Embed interactive map with office pin]</small>
               </div>
             </div>
             <div className="contact-form">
@@ -423,8 +424,8 @@ function App() {
             <div className="footer-links">
               <div className="footer-column">
                 <h4>Our Approach</h4>
-                <a href="#">Discovery & Due Diligence</a>
-                <a href="#">Structure & Pre-Development</a>
+                <a href="#">Feasibility & Due Diligence</a>
+                <a href="#">Document & Develop</a>
                 <a href="#">Execute & Oversee</a>
                 <a href="#">Deliver & Transition</a>
               </div>

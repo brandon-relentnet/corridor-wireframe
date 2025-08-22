@@ -24,7 +24,7 @@
 }
 
 .logo-img {
-  height: 50px;
+  height: 70px;
   width: auto;
 }
 
@@ -74,33 +74,41 @@
   z-index: 1;
 }
 
-.hero-image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-}
-
-.hero-image-placeholder::before {
-  content: '';
+.hero-slide {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -317,10 +325,10 @@
 
 .program-metrics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  padding: 2rem;
   background-color: #f8f9fa;
   border-radius: 8px;
 }
@@ -418,7 +426,8 @@
   }
   
   .program-metrics {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
@@ -516,6 +525,47 @@
   }
 }
 
+/* Statistics Section */
+.statistics {
+  padding: 5rem 0;
+  background-color: white;
+  text-align: center;
+}
+
+.statistics h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  padding: 2rem 1rem;
+}
+
+.stat-value {
+  display: block;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0066cc;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 1.1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* Our Approach Section */
 .approach {
   padding: 6rem 0;
@@ -527,6 +577,28 @@
   font-size: 3rem;
   margin-bottom: 1rem;
   color: #1a1a1a;
+}
+
+.einstein-quote {
+  background: linear-gradient(135deg, #f8f9fa, #e8eef4);
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  font-style: italic;
+  line-height: 1.8;
+  border-left: 4px solid #0066cc;
+}
+
+.einstein-quote cite {
+  display: block;
+  margin-top: 1rem;
+  color: #0066cc;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .approach-intro {
@@ -722,15 +794,18 @@
 .member-image {
   width: 200px;
   height: 250px;
-  background: linear-gradient(135deg, #ddd, #eee);
   border-radius: 8px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #999;
-  font-weight: bold;
-  text-align: center;
-  padding: 1rem;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .member-content h3 {
@@ -1011,27 +1086,6 @@
   line-height: 1.6;
 }
 
-.map-placeholder {
-  margin-top: 2rem;
-  background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
-  height: 300px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #999;
-  font-weight: bold;
-  text-align: center;
-  padding: 2rem;
-  border: 2px solid #444;
-}
-
-.map-placeholder small {
-  font-weight: normal;
-  color: #666;
-  margin-top: 1rem;
-}
 
 .contact-form {
   background-color: white;
@@ -1088,7 +1142,7 @@
 }
 
 .footer-logo {
-  height: 40px;
+  height: 60px;
   margin-bottom: 1rem;
   filter: brightness(0) invert(1);
   opacity: 0.8;
@@ -1178,7 +1232,8 @@
   }
   
   .program-metrics {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
 
