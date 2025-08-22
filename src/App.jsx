@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react'
 import { 
   BuildingOffice2Icon,
-  ChartBarIcon,
   CurrencyDollarIcon,
   BoltIcon,
   UserGroupIcon,
   LightBulbIcon,
   ChartPieIcon,
-  ClipboardDocumentCheckIcon,
-  DocumentMagnifyingGlassIcon,
-  CogIcon,
-  RocketLaunchIcon,
-  CheckCircleIcon
+  MagnifyingGlassIcon,
+  DocumentTextIcon,
+  PlayIcon,
+  TrophyIcon
 } from '@heroicons/react/24/outline'
 import './App.css'
 
 function App() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [scrollY, setScrollY] = useState(0)
+  const [activeSection, setActiveSection] = useState('')
   const heroImages = ['/hero_bg_0.png', '/hero_bg_1.png']
   
   useEffect(() => {
@@ -31,30 +30,48 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
+      
+      // Determine active section
+      const sections = ['hero', 'why-corridor', 'programs', 'principles', 'approach', 'statistics', 'team', 'contact']
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          return rect.top <= 100 && rect.bottom >= 100
+        }
+        return false
+      })
+      
+      if (currentSection) {
+        setActiveSection(currentSection)
+      }
     }
     
     window.addEventListener('scroll', handleScroll)
+    handleScroll() // Call once to set initial state
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   
   return (
     <div className="app">
-      <header className="header">
+      <header className={`header ${scrollY > 50 ? 'scrolled' : ''}`}>
         <div className="header-content">
           <div className="logo">
             <img src="/cgc_logo.png" alt="Corridor Group Consulting" className="logo-img" />
           </div>
           <nav className="nav">
-            <a href="#approach">Approach</a>
-            <a href="#programs">Programs</a>
-            <a href="#principles">Principles</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
+            <a href="#why-corridor" className={activeSection === 'why-corridor' ? 'active' : ''}>Why Corridor</a>
+            <a href="#programs" className={activeSection === 'programs' ? 'active' : ''}>Programs</a>
+            <a href="#principles" className={activeSection === 'principles' ? 'active' : ''}>Principles</a>
+            <a href="#approach" className={activeSection === 'approach' ? 'active' : ''}>Approach</a>
+            <a href="#statistics" className={activeSection === 'statistics' ? 'active' : ''}>Results</a>
+            <a href="#team" className={activeSection === 'team' ? 'active' : ''}>Team</a>
+            <a href="#contact" className={activeSection === 'contact' ? 'active' : ''}>Contact</a>
           </nav>
         </div>
       </header>
 
-      <section className="hero">
+      <section id="hero" className="hero">
         <div className="hero-background">
           {heroImages.map((image, index) => (
             <div
@@ -75,9 +92,9 @@ function App() {
         </div>
       </section>
 
-      <section className="why-corridor">
+      <section id="why-corridor" className="why-corridor">
         <div className="container">
-          <h2>Why Corridor</h2>
+          <h2 className="section-heading">Why Corridor</h2>
           <p className="why-intro">
             Our principals bring over 50 years of combined experience leading commercial and mixed-use development — from master planning and entitlement to delivery and operational readiness. We act as translators of vision, protectors of capital, and facilitators of forward motion.
           </p>
@@ -96,7 +113,7 @@ function App() {
 
       <section id="programs" className="program-studies">
         <div className="container">
-          <h2>Program Studies</h2>
+          <h2 className="section-heading">Program Studies</h2>
           <p className="section-subtitle">Demonstrating our complementary expertise and proven process through transformative developments</p>
           <div className="program-grid">
             <div className="program-card">
@@ -177,7 +194,7 @@ function App() {
 
       <section id="principles" className="guiding-principles">
         <div className="container">
-          <h2>Guiding Principles</h2>
+          <h2 className="section-heading">Guiding Principles</h2>
           <p className="section-subtitle">Our approach is built on three core pillars that guide every decision and action we take.</p>
           <div className="principles-grid">
             <div className="principle-card" data-principle="client-centered">
@@ -210,8 +227,8 @@ function App() {
 
       <section id="approach" className="approach">
         <div className="container">
-          <h2>Our Approach</h2>
-          <blockquote className="einstein-quote">
+          <h2 className="section-heading">Our Approach</h2>
+          <blockquote className="einstein-quote glass-quote">
             "We cannot solve our problems with the same thinking we used when we created them."
             <cite>— Albert Einstein</cite>
           </blockquote>
@@ -220,99 +237,131 @@ function App() {
           </p>
           <p className="approach-tagline">We guide the complexity of your development with calm, confidence, and creativity.</p>
           
-          <div className="approach-phases">
-            <div className="phase-section">
-              <div className="phase-header">
-                <span className="phase-number">01</span>
-                <h3>Feasibility & Due Diligence</h3>
-              </div>
-              <div className="phase-content">
-                <div className="phase-methodology">
-                  <h4>How We Listen</h4>
-                  <p>We begin by deeply understanding your vision and translating it into actionable strategies. Listening differently to identify opportunities and constraints early in the process.</p>
-                </div>
-                <div className="phase-deliverables">
-                  <h4>What We Deliver</h4>
-                  <ul>
-                    <li>Market analysis and site evaluation</li>
-                    <li>Feasibility studies and financial modeling</li>
-                    <li>Zoning and entitlement assessment</li>
-                    <li>Risk identification and mitigation planning</li>
-                  </ul>
+          <div className="approach-showcase">
+            <div className="phase-card glass-card">
+              <div className="phase-left">
+                <div className="phase-number">01</div>
+                <div className="phase-icon">
+                  <MagnifyingGlassIcon className="icon" />
                 </div>
               </div>
-            </div>
-            
-            <div className="phase-section">
-              <div className="phase-header">
-                <span className="phase-number">02</span>
-                <h3>Document & Develop</h3>
-              </div>
-              <div className="phase-content">
-                <div className="phase-methodology">
-                  <h4>How We Organize</h4>
-                  <p>Creating frameworks that align stakeholders, optimize resources, and establish clear pathways from concept to completion.</p>
+              <div className="phase-right">
+                <div className="phase-header">
+                  <h3>Feasibility & Due Diligence</h3>
                 </div>
-                <div className="phase-deliverables">
-                  <h4>What We Deliver</h4>
-                  <ul>
-                    <li>Design team selection and management</li>
-                    <li>Budgeting and cost control systems</li>
-                    <li>Permit strategy and municipal coordination</li>
-                    <li>Preconstruction planning and value engineering</li>
-                  </ul>
+                <div className="phase-content">
+                  <div className="phase-methodology">
+                    <h4>How We Listen</h4>
+                    <p>We begin by deeply understanding your vision and translating it into actionable strategies. Listening differently to identify opportunities and constraints early in the process.</p>
+                  </div>
+                  <div className="phase-deliverables">
+                    <h4>What We Deliver</h4>
+                    <ul>
+                      <li>Market analysis and site evaluation</li>
+                      <li>Feasibility studies and financial modeling</li>
+                      <li>Zoning and entitlement assessment</li>
+                      <li>Risk identification and mitigation planning</li>
+                    </ul>
+                  </div>
                 </div>
+                <div className="phase-progress"></div>
               </div>
             </div>
             
-            <div className="phase-section">
-              <div className="phase-header">
-                <span className="phase-number">03</span>
-                <h3>Execute & Oversee</h3>
+            <div className="phase-card glass-card featured">
+              <div className="phase-left">
+                <div className="phase-number">02</div>
+                <div className="phase-icon">
+                  <DocumentTextIcon className="icon" />
+                </div>
               </div>
-              <div className="phase-content">
-                <div className="phase-methodology">
-                  <h4>How We Lead</h4>
-                  <p>Implementing with precision while maintaining flexibility to adapt as projects evolve, always protecting your investment with confident leadership.</p>
+              <div className="phase-right">
+                <div className="phase-header">
+                  <h3>Document & Develop</h3>
                 </div>
-                <div className="phase-deliverables">
-                  <h4>What We Deliver</h4>
-                  <ul>
-                    <li>Construction administration and quality control</li>
-                    <li>Schedule management and milestone tracking</li>
-                    <li>Stakeholder communication and reporting</li>
-                    <li>Design optimization and change management</li>
-                  </ul>
+                <div className="phase-content">
+                  <div className="phase-methodology">
+                    <h4>How We Organize</h4>
+                    <p>Creating frameworks that align stakeholders, optimize resources, and establish clear pathways from concept to completion.</p>
+                  </div>
+                  <div className="phase-deliverables">
+                    <h4>What We Deliver</h4>
+                    <ul>
+                      <li>Design team selection and management</li>
+                      <li>Budgeting and cost control systems</li>
+                      <li>Permit strategy and municipal coordination</li>
+                      <li>Preconstruction planning and value engineering</li>
+                    </ul>
+                  </div>
                 </div>
+                <div className="phase-progress"></div>
               </div>
             </div>
             
-            <div className="phase-section">
-              <div className="phase-header">
-                <span className="phase-number">04</span>
-                <h3>Deliver & Transition</h3>
+            <div className="phase-card glass-card">
+              <div className="phase-left">
+                <div className="phase-number">03</div>
+                <div className="phase-icon">
+                  <PlayIcon className="icon" />
+                </div>
               </div>
-              <div className="phase-content">
-                <div className="phase-methodology">
-                  <h4>How We Finish</h4>
-                  <p>Ensuring seamless handoff and operational readiness, with assets built to endure and perform for long-term success.</p>
+              <div className="phase-right">
+                <div className="phase-header">
+                  <h3>Execute & Oversee</h3>
                 </div>
-                <div className="phase-deliverables">
-                  <h4>What We Deliver</h4>
-                  <ul>
-                    <li>Project close-out and warranty coordination</li>
-                    <li>Operations transition planning</li>
-                    <li>Asset management setup and documentation</li>
-                    <li>Performance monitoring and optimization</li>
-                  </ul>
+                <div className="phase-content">
+                  <div className="phase-methodology">
+                    <h4>How We Lead</h4>
+                    <p>Implementing with precision while maintaining flexibility to adapt as projects evolve, always protecting your investment with confident leadership.</p>
+                  </div>
+                  <div className="phase-deliverables">
+                    <h4>What We Deliver</h4>
+                    <ul>
+                      <li>Construction administration and quality control</li>
+                      <li>Schedule management and milestone tracking</li>
+                      <li>Stakeholder communication and reporting</li>
+                      <li>Design optimization and change management</li>
+                    </ul>
+                  </div>
                 </div>
+                <div className="phase-progress"></div>
+              </div>
+            </div>
+            
+            <div className="phase-card glass-card">
+              <div className="phase-left">
+                <div className="phase-number">04</div>
+                <div className="phase-icon">
+                  <TrophyIcon className="icon" />
+                </div>
+              </div>
+              <div className="phase-right">
+                <div className="phase-header">
+                  <h3>Deliver & Transition</h3>
+                </div>
+                <div className="phase-content">
+                  <div className="phase-methodology">
+                    <h4>How We Finish</h4>
+                    <p>Ensuring seamless handoff and operational readiness, with assets built to endure and perform for long-term success.</p>
+                  </div>
+                  <div className="phase-deliverables">
+                    <h4>What We Deliver</h4>
+                    <ul>
+                      <li>Project close-out and warranty coordination</li>
+                      <li>Operations transition planning</li>
+                      <li>Asset management setup and documentation</li>
+                      <li>Performance monitoring and optimization</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="phase-progress"></div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="statistics">
+      <section id="statistics" className="statistics">
         <div className="container">
           <h2 className="stats-heading">Decades of Complex Real Estate Development</h2>
           <div className="stats-showcase">
@@ -362,7 +411,7 @@ function App() {
 
       <section id="team" className="team">
         <div className="container">
-          <h2>Leadership Team</h2>
+          <h2 className="section-heading">Leadership Team</h2>
           <div className="team-intro">
             <p>
               Our leadership team brings a combined 50+ years of experience across institutional, 
@@ -376,8 +425,15 @@ function App() {
           </div>
           <div className="team-grid">
             <div className="team-member">
-              <div className="member-image">
-                <img src="/joshua-hall.png" alt="Joshua Hall" />
+              <div className="member-left">
+                <div className="member-image">
+                  <img src="/joshua-hall.png" alt="Joshua Hall" />
+                </div>
+                <div className="member-credentials">
+                  <div><strong>Education:</strong> B.S. & M.S. Structural Engineering, Vanderbilt University</div>
+                  <div><strong>Expertise:</strong> Leadership & Delivery - 14 years at Cousins Properties</div>
+                  <div><strong>Community:</strong> Lions Club International</div>
+                </div>
               </div>
               <div className="member-content">
                 <h3>Joshua Hall</h3>
@@ -389,16 +445,18 @@ function App() {
                   the Southeast and beyond, he's not just a developer—he's a builder of trust, consensus, 
                   and momentum.
                 </p>
-                <p className="member-credentials">
-                  <strong>Education:</strong> B.S. & M.S. Structural Engineering, Vanderbilt University<br/>
-                  <strong>Expertise:</strong> Leadership & Delivery - 14 years at Cousins Properties<br/>
-                  <strong>Community:</strong> Lions Club International
-                </p>
               </div>
             </div>
             <div className="team-member">
-              <div className="member-image">
-                <img src="/jason-hall.png" alt="Jason Hall" />
+              <div className="member-left">
+                <div className="member-image">
+                  <img src="/jason-hall.png" alt="Jason Hall" />
+                </div>
+                <div className="member-credentials">
+                  <div><strong>Education:</strong> B.S. Engineering & MBA, Vanderbilt University</div>
+                  <div><strong>Expertise:</strong> Preconstruction planning and operations</div>
+                  <div><strong>Portfolio:</strong> Historic renovations to data centers</div>
+                </div>
               </div>
               <div className="member-content">
                 <h3>Jason Hall</h3>
@@ -409,11 +467,6 @@ function App() {
                   spectrum from historic renovations to cutting-edge data centers. His experience runs 
                   deep in Middle Tennessee and across the U.S., including Georgia, DC, Florida, Texas, 
                   Oregon, and beyond.
-                </p>
-                <p className="member-credentials">
-                  <strong>Education:</strong> B.S. Engineering & MBA, Vanderbilt University<br/>
-                  <strong>Expertise:</strong> Preconstruction planning and operations<br/>
-                  <strong>Portfolio:</strong> Historic renovations to data centers
                 </p>
               </div>
             </div>
@@ -466,38 +519,46 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <div className="footer-content">
+          <div className="footer-content glass-card">
             <div className="footer-brand">
               <img src="/cgc_logo.png" alt="Corridor Group Consulting" className="footer-logo" />
               <p>Development & Program Management Leadership</p>
+              <p className="footer-tagline">Guiding complexity with calm, confidence, and creativity.</p>
             </div>
             <div className="footer-links">
               <div className="footer-column">
-                <h4>Our Approach</h4>
-                <a href="#">Feasibility & Due Diligence</a>
-                <a href="#">Document & Develop</a>
-                <a href="#">Execute & Oversee</a>
-                <a href="#">Deliver & Transition</a>
+                <h4>Navigation</h4>
+                <a href="#why-corridor">Why Corridor</a>
+                <a href="#programs">Programs</a>
+                <a href="#principles">Principles</a>
+                <a href="#approach">Approach</a>
+                <a href="#statistics">Results</a>
+                <a href="#team">Team</a>
               </div>
               <div className="footer-column">
-                <h4>Company</h4>
-                <a href="#">About Us</a>
-                <a href="#">Leadership</a>
-                <a href="#">Projects</a>
-                <a href="#">Contact</a>
+                <h4>Services</h4>
+                <a href="#approach">Feasibility & Due Diligence</a>
+                <a href="#approach">Document & Develop</a>
+                <a href="#approach">Execute & Oversee</a>
+                <a href="#approach">Deliver & Transition</a>
               </div>
               <div className="footer-column">
-                <h4>Connect</h4>
-                <a href="#">LinkedIn</a>
-                <a href="#">[PLACEHOLDER: Twitter]</a>
-                <a href="#">[PLACEHOLDER: Instagram]</a>
+                <h4>Contact Info</h4>
+                <div className="contact-info-footer">
+                  <p><strong>Office:</strong><br/>701 Newhall<br/>Nashville, TN 37206</p>
+                  <p><strong>Phone:</strong><br/>(404) 293-6330</p>
+                  <p><strong>Email:</strong><br/>joshua@corridorgroupconsulting.com</p>
+                </div>
               </div>
             </div>
           </div>
           <div className="footer-bottom">
             <p>&copy; 2024 Corridor Group Consulting. All rights reserved.</p>
-            <p>[PLACEHOLDER: Privacy Policy | Terms of Service]</p>
+            <p className="footer-note">Building Tomorrow's Landmarks Today</p>
           </div>
+        </div>
+        <div className="powered-by">
+          <p>Powered by <a href="https://relentnet.com" target="_blank" rel="noopener noreferrer">RelentNet™</a></p>
         </div>
       </footer>
     </div>
